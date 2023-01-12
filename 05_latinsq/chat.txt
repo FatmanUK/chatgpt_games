@@ -1,0 +1,5 @@
+Write an efficient C program to generate a random Latin Square.
+
+Sure, here's an example C program that generates a random Latin Square:
+
+This program uses the rand() function from stdlib.h and time() function from time.h to generate random numbers. The program starts by initializing a 2D array of size NxN with the values from 1 to N*N. Then it shuffles the rows and columns using a nested loop, and finally, it checks if the square is
