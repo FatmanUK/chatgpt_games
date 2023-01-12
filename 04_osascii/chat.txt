@@ -1,0 +1,5 @@
+Write a program in Python to display an ASCII art image of the current Linux distribution in the bash console.
+
+This program uses the platform module to determine the current Linux distribution, and uses an if-elif block to display an ASCII art image corresponding to the detected distribution. In this example, the program recognizes "Ubuntu" and "Fedora" distributions, and display a message if the distribution is not recognized.
+You can run this program by running python scriptname.py in the terminal.
+Please note that the current ASCII art is just for demonstration purpose only. You can replace it with a more accurate ASCII art for the respective Linux distributions.
