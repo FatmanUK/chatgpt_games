@@ -10,3 +10,19 @@ This playbook does the following:
     And starts the Apache NiFi service.
 
 Please note that this is just an example, you may need to adjust the paths, versions and commands to match your specific environment.
+
+No, also apply configuration for a three node cluster.
+
+Sure, here is an example playbook that configures a three node Apache NiFi cluster:
+
+This playbook does the following:
+
+    Creates the NiFi conf directory if it does not exist,
+    copies the nifi.properties, state-management.xml, authorizers.xml, and users.xml file to conf directory,
+    starts the NiFi service.
+
+It is assumed that you have the necessary templates (nifi.properties.j2, state-management.xml.j2, authorizers.xml.j2, and users.xml.j2) in the same directory where you run the playbook.
+
+Also, you need to define the three nodes, ports and a protocol port to communicate between the nodes.
+
+Please note that this is just an example, you may need to adjust the paths, versions and commands to match your specific environment.

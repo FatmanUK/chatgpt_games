@@ -1,0 +1,34 @@
+---
+- name: Configure Apache NiFi cluster
+  hosts: nifi_cluster
+  vars:
+    nifi_version: 1.13.2
+    nifi_install_dir: /opt
+    nifi_cluster_node_1: nifi1.example.com
+    nifi_cluster_node_2: nifi2.example.com
+    nifi_cluster_node_3: nifi3.example.com
+    nifi_cluster_protocol_port: 6342
+    nifi_web_protocol_port: 8080
+  tasks:
+  - name: Create NiFi conf directory
+    file:
+      path: "{{ nifi_install_dir }}/nifi-{{ nifi_version }}/conf"
+      state: directory
+  - name: Copy nifi.properties
+    template:
+      src: nifi.properties.j2
+      dest: "{{ nifi_install_dir }}/nifi-{{ nifi_version }}/conf/nifi.properties"
+  - name: Copy state-management.xml
+    template:
+      src: state-management.xml.j2
+      dest: "{{ nifi_install_dir }}/nifi-{{ nifi_version }}/conf/state-management.xml"
+  - name: Copy authorizers.xml
+    template:
+      src: authorizers.xml.j2
+      dest: "{{ nifi_install_dir }}/nifi-{{ nifi_version }}/conf/authorizers.xml"
+  - name: Copy users.xml
+    template:
+      src: users.xml.j2
+      dest: "{{ nifi_install_dir }}/nifi-{{ nifi_version }}/conf/users.xml"
+  - name: Start NiFi
+    command: "{{ nifi_install_dir }}/nifi-{{ nifi_version }}/bin/nifi.sh start"
