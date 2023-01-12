@@ -1,0 +1,6 @@
+Write a program in Go to play Tic-tac-toe on the bash console.
+
+Sure, here is an example program in Go that allows you to play Tic-tac-toe on the bash console:
+
+This program creates a 3x3 board represented as a 2-dimensional string array, and uses a simple loop to allow players to take turns entering their moves. The program checks for a win or draw after each move, and ends the game if either is true. The printBoard function is used to display the current state of the board.
+You can run this program by
