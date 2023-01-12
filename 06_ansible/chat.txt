@@ -1,0 +1,12 @@
+Write an Ansible playbook to install Apache NiFi.
+
+Here is an example Ansible playbook for installing Apache NiFi on a target host:
+
+This playbook does the following:
+
+    Installs the openjdk-8-jdk package, which is a dependency for Apache NiFi,
+    Downloads the NiFi binary to the target host,
+    Extracts the binary,
+    And starts the Apache NiFi service.
+
+Please note that this is just an example, you may need to adjust the paths, versions and commands to match your specific environment.
