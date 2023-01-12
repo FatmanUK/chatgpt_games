@@ -3,3 +3,14 @@ Write an efficient C program to generate a random Latin Square.
 Sure, here's an example C program that generates a random Latin Square:
 
 This program uses the rand() function from stdlib.h and time() function from time.h to generate random numbers. The program starts by initializing a 2D array of size NxN with the values from 1 to N*N. Then it shuffles the rows and columns using a nested loop, and finally, it checks if the square is
+
+No, use backtracking to make sure a Latin Square is printed.
+
+Sure, here is an example C program that uses backtracking to generate a random Latin Square:
+
+This program uses a backtracking algorithm to generate a random Latin square. It starts by initializing a 2D array of size NxN with all elements set to 0. The program then uses the solve function to fill in the square with numbers from 1 to N.
+The solve function uses a recursive approach, it starts by checking if the current row and column index is at the end of the square, if so it returns true. Then it check if the current column is at the end of the row, if so it moves to the next row and resets the column.
+It then uses a nested loop to try all numbers from 1 to N, and for each number, it calls the isSafe function to check if the number already exists in the same row or column. If the number is safe to use, it assigns the number to the current cell and calls the solve function again with the next cell. If the solve function returns true, then it means a solution has been found and the function returns true. If the solve function returns false, the program backtracks by resetting the current cell to 0, and trying the next number.
+
+The program will print a random latin square if exists.
+Please note that the program uses a fixed size NxN of 9x9. You can adjust it to any size you want.
